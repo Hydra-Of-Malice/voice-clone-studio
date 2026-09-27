@@ -21,8 +21,11 @@ INSTALLING
      click "More info" and then "Run anyway".
   3. Start Voice Clone Studio from the Start menu or the desktop.
 
-The first start takes up to a minute. The first time you analyse a recording
-or generate speech, loading the models takes another 20 to 60 seconds.
+THE FIRST RUN IS SLOW - THIS IS NORMAL
+  Right after installing, Windows checks every new file the first time it is
+  used. The first recording analysis can take 5 to 8 minutes and the first
+  generation 3 to 5 minutes. Let it finish. After that, an analysis takes
+  about 2 minutes and a few sentences generate in 10 to 30 seconds.
 
 
 STEP 1 - CREATE YOUR VOICE
