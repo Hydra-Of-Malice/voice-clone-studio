@@ -20,7 +20,7 @@
   #define ModelsDir "..\build\models"
 #endif
 #define AppName "Voice Clone Studio"
-#define AppURL "https://github.com/Hydra-Of-Malice/voice-dubber"
+#define AppURL "https://github.com/Hydra-Of-Malice/voice-clone-studio"
 #define SrcDir ".."
 #define PythonW "{app}\runtime\pythonw.exe"
 #define PythonExe "{app}\runtime\python.exe"

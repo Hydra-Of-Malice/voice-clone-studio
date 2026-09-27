@@ -6,7 +6,7 @@
 
 **Hindi · Hinglish · English — 100% on your own PC, nothing uploaded.**
 
-[![Download](https://img.shields.io/github/v/release/Hydra-Of-Malice/voice-dubber?label=Download&style=for-the-badge&color=4f46e5)](https://github.com/Hydra-Of-Malice/voice-dubber/releases/latest)
+[![Download](https://img.shields.io/github/v/release/Hydra-Of-Malice/voice-clone-studio?label=Download&style=for-the-badge&color=4f46e5)](https://github.com/Hydra-Of-Malice/voice-clone-studio/releases/latest)
 ![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=for-the-badge&logo=windows&logoColor=white)
 ![GPU](https://img.shields.io/badge/NVIDIA-8%20GB%20GPU-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
 ![Offline](https://img.shields.io/badge/Runs-Offline-15803d?style=for-the-badge)
@@ -46,7 +46,7 @@ of a microphone again.
 
 ## 📥 Download
 
-Get the installer from the [Releases page](https://github.com/Hydra-Of-Malice/voice-dubber/releases).
+Get the installer from the [Releases page](https://github.com/Hydra-Of-Malice/voice-clone-studio/releases).
 
 1. Download **every file** of the release (`VoiceCloneStudio-Setup-x.y.z.exe` and all the `.bin` files)
    into the **same folder**.
