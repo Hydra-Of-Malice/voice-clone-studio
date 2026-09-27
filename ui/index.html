@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Voice Clone Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Voice Clone Studio</h1>
+  <div id="gpu" class="muted">connecting…</div>
+</header>
+
+<main>
+  <!-- STEP 1 -->
+  <section class="card" id="step1">
+    <h2><span class="step">1</span> Create Voice</h2>
+    <p class="muted">Upload 5–10 minutes of clear, single-speaker speech (no music, no other voices), or record it here.</p>
+    <div class="row">
+      <label class="btn primary" for="file">Upload Audio</label>
+      <input type="file" id="file" accept="audio/*,.wav,.mp3,.flac,.m4a,.ogg,.webm" hidden>
+      <button class="btn" id="recSample">● Record sample</button>
+      <span id="recSampleTime" class="muted"></span>
+    </div>
+    <div id="analysis" class="hidden">
+      <div class="progress"><div id="p1"></div></div>
+      <div id="p1msg" class="muted"></div>
+      <div class="stats" id="stats"></div>
+      <ul id="issues" class="issues"></ul>
+      <div class="row">
+        <input id="profileName" placeholder="Voice name (e.g. My voice)" value="My voice">
+        <button class="btn primary" id="createProfile" disabled>Create Voice Profile</button>
+      </div>
+      <details id="transcriptBox"><summary>Transcript</summary><div id="transcript" class="transcript"></div></details>
+    </div>
+  </section>
+
+  <!-- CONSENT -->
+  <section class="card hidden" id="stepConsent">
+    <h2><span class="step">✓</span> Confirm it's your voice</h2>
+    <p class="muted">Read this statement aloud in your normal voice. We check that the words match and that the voice matches your sample. Generation is unlocked only after this passes.</p>
+    <blockquote id="statement"></blockquote>
+    <div class="row">
+      <button class="btn primary" id="recConsent">● Record statement</button>
+      <span id="recConsentTime" class="muted"></span>
+      <button class="btn" id="newStatement">New statement</button>
+    </div>
+    <div id="consentResult" class="muted"></div>
+  </section>
+
+  <!-- STEP 2 -->
+  <section class="card" id="step2">
+    <h2><span class="step">2</span> Enter Script</h2>
+    <div class="row">
+      <label>Voice <select id="profileSelect"></select></label>
+      <label>Language
+        <select id="language">
+          <option value="auto">Auto Detect</option>
+          <option value="hi">Hindi / Hinglish (Devanagari)</option>
+          <option value="hi-Latn">Hinglish (Roman script)</option>
+          <option value="en">English</option>
+        </select>
+      </label>
+      <label>Style
+        <select id="style">
+          <option value="natural">Natural</option>
+          <option value="conversational">Conversational</option>
+          <option value="professional">Professional</option>
+          <option value="energetic">Energetic</option>
+        </select>
+      </label>
+      <label>Speed <input type="range" id="speed" min="0.8" max="1.2" step="0.05" value="1"> <span id="speedVal">1.00x</span></label>
+    </div>
+    <textarea id="script" rows="6" placeholder="Paste your script here…"></textarea>
+    <div class="row">
+      <button class="btn primary" id="generate">Generate Voice</button>
+      <span id="genMsg" class="muted"></span>
+    </div>
+    <div class="progress"><div id="p2"></div></div>
+  </section>
+
+  <!-- STEP 3 -->
+  <section class="card hidden" id="step3">
+    <h2><span class="step">3</span> Preview</h2>
+    <audio id="player" controls></audio>
+    <div class="row">
+      <button class="btn" id="regen">Regenerate</button>
+      <a class="btn" id="dlWav" download>Download WAV</a>
+      <a class="btn" id="dlMp3" download>Download MP3</a>
+    </div>
+    <div id="metrics" class="stats"></div>
+    <p class="muted small">Output is watermarked and tagged as AI-generated speech created with the speaker's consent.</p>
+  </section>
+</main>
+<script src="recorder.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+*.log
+server.pid
+testdata/
+req_nocb.txt
+.claude/
+web/node_modules/
+web/dist/
+build/
+installer/app.ico

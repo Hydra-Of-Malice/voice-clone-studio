@@ -1,0 +1,25 @@
+# torch, pkuseg and chatterbox-tts are installed by scripts/setup.ps1 in a fixed order (see there).
+faster-whisper>=1.1
+silero-vad>=5.1
+speechbrain>=1.0
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart
+soundfile>=0.12
+soxr>=0.5
+pyloudnorm>=0.1.1
+lameenc>=1.7
+audiotsm>=0.1.2
+num2words>=0.5.13
+cryptography>=42
+huggingface_hub
+numpy<2
+scipy
+# v0.2
+deepfilternet>=0.5.6        # denoiser (wheels up to Python 3.11)
+audioseal>=0.2              # watermark
+c2pa-python>=0.37           # Content Credentials
+wordfreq>=3.1               # English / Hindi vocabulary for Hinglish transliteration
+peft>=0.21                  # LoRA fine-tuning
+setuptools<81               # resemble-perth needs pkg_resources
+pytest

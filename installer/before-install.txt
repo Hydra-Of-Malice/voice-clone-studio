@@ -1,0 +1,21 @@
+Voice Clone Studio
+
+BEFORE YOU INSTALL
+
+  - Keep the setup .exe and ALL of its .bin files in the same folder.
+  - You need Windows 10 or 11 and an NVIDIA graphics card with 8 GB of memory
+    (RTX 20, 30 or 40 series). RTX 50 series cards are not supported yet.
+  - About 30 GB of free disk space is needed during installation.
+
+RESPONSIBLE USE
+
+  This app creates a digital copy of a voice. Only create a voice profile from
+  a recording of YOUR OWN voice, or of someone who has clearly agreed to it.
+  The app asks the speaker to read a consent statement aloud before it will
+  generate anything.
+
+  Every file it generates is watermarked and labelled as AI-generated speech.
+  Do not use it to impersonate, deceive, harass or defraud anyone. Doing so
+  may be a criminal offence.
+
+Everything runs on your computer. Your recordings are not uploaded anywhere.
