@@ -8,8 +8,8 @@ Nothing you record is uploaded anywhere.
 WHAT YOU NEED
 -------------
   - Windows 10 or 11
-  - An NVIDIA graphics card with 8 GB of memory (RTX 20, 30 or 40 series)
-    RTX 50 series cards are not supported yet.
+  - An NVIDIA graphics card with 8 GB of memory (RTX 20, 30, 40 or 50 series)
+    with NVIDIA driver version 572 or newer
   - About 15 GB of disk space (30 GB free while installing)
   - A microphone, or a recording of your voice
 

@@ -6,7 +6,7 @@ $ErrorActionPreference = 'Stop'
 $root = Split-Path -Parent $PSScriptRoot
 $build = Join-Path $root 'build'
 $outDir = Join-Path $build 'installer'
-$runtime = Join-Path $build 'runtime'
+$runtime = Join-Path $build 'runtime-cu128'
 $models = Join-Path $build 'models'
 New-Item -ItemType Directory -Force -Path $outDir | Out-Null
 

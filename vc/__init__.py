@@ -2,7 +2,7 @@
 import os
 from pathlib import Path
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 # torch.compile needs triton / a C++ toolchain on PATH, neither of which exists on stock Windows.
 os.environ.setdefault("TORCHDYNAMO_DISABLE", "1")

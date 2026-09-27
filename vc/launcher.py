@@ -24,6 +24,7 @@ PORT = int(os.environ.get("VC_PORT", "8765"))
 URL = f"http://{HOST}:{PORT}/"
 CREATE_NO_WINDOW = 0x08000000
 MIN_VRAM_MB = 7000
+MIN_DRIVER = 572          # CUDA 12.8 runtime; also the first driver branch for RTX 50 cards
 
 
 def data_dir() -> Path:
@@ -63,13 +64,15 @@ def check_gpu() -> None:
                 "It will start, but it cannot generate speech on this computer.")
         return
     try:
-        out = subprocess.run([smi, "--query-gpu=name,memory.total,compute_cap", "--format=csv,noheader,nounits"],
+        out = subprocess.run([smi, "--query-gpu=name,memory.total,compute_cap,driver_version",
+                              "--format=csv,noheader,nounits"],
                              capture_output=True, text=True, timeout=15, creationflags=CREATE_NO_WINDOW).stdout
-        name, mem, cap = [x.strip() for x in out.strip().splitlines()[0].split(",")]
-        log(f"GPU: {name}, {mem} MiB, compute capability {cap}")
-        if float(cap) >= 10:
-            message(f"{name} (RTX 50 series) is not supported by this release; speech generation will fail.\n\n"
-                    "A later release will add support.")
+        name, mem, cap, driver = [x.strip() for x in out.strip().splitlines()[0].split(",")]
+        log(f"GPU: {name}, {mem} MiB, compute capability {cap}, driver {driver}")
+        if float(driver.split(".")[0]) < MIN_DRIVER:
+            message(f"Your NVIDIA driver is version {driver}. Voice Clone Studio needs version {MIN_DRIVER} or newer.\n\n"
+                    "Update the driver with the NVIDIA app or from nvidia.com/drivers, then start the app again. "
+                    "Until then, speech generation will fail.")
         elif int(float(mem)) < MIN_VRAM_MB:
             message(f"{name} has {int(float(mem)) / 1024:.0f} GB of memory; 8 GB is recommended.\n\n"
                     "Generation may fail with an out-of-memory error. Close other apps that use the GPU.")

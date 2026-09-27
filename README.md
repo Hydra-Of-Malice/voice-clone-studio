@@ -62,8 +62,8 @@ Step-by-step help is in the [user guide](docs/USER-GUIDE.md).
 | | |
 |---|---|
 | Operating system | Windows 10 or 11, 64-bit |
-| Graphics card | NVIDIA with **8 GB** of memory (RTX 20, 30 or 40 series), recent driver |
-| Not supported yet | RTX 50 series, AMD and Intel graphics, computers without a GPU |
+| Graphics card | NVIDIA with **8 GB** of memory (RTX 20, 30, 40 or 50 series), driver 572 or newer |
+| Not supported | Cards with less than 8 GB of memory, AMD and Intel graphics, computers without a GPU |
 | Disk space | about 15 GB installed, 30 GB free while installing |
 | Browser | Microsoft Edge (part of Windows) for the app window |
 
@@ -136,7 +136,7 @@ re-recording or neural audio codecs, so a missing watermark never proves that a 
 Requirements: Windows, Python 3.11, [uv](https://docs.astral.sh/uv/), Node.js 20, MSVC Build Tools.
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts\setup.ps1      # venv, PyTorch cu126, dependencies, web build
+powershell -ExecutionPolicy Bypass -File scripts\setup.ps1      # venv, PyTorch cu128, dependencies, web build
 .venv\Scripts\python -m vc.main                                 # http://127.0.0.1:8765
 .venv\Scripts\python -m pytest tests -q
 ```
@@ -158,7 +158,7 @@ Configuration is by environment variable (`VC_ASR`, `VC_TTS`, `VC_DATA_DIR`, `VC
 ### Building the installer
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File scripts\build-runtime.ps1     # build\runtime  (about 6 GB)
+powershell -ExecutionPolicy Bypass -File scripts\build-runtime.ps1     # build\runtime-cu128 (about 6 GB)
 .venv\Scripts\python scripts\build-models.py                           # build\models   (about 8 GB)
 powershell -ExecutionPolicy Bypass -File scripts\build-installer.ps1   # build\installer\*.exe + *.bin
 ```

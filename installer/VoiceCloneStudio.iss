@@ -1,6 +1,6 @@
 ; Inno Setup script for Voice Clone Studio (Windows 10/11 x64). Build with scripts\build-installer.ps1.
 ;
-; Self-contained: ships the relocatable Python 3.11 runtime with the CUDA 12.6 stack ({app}\runtime) and every
+; Self-contained: ships the relocatable Python 3.11 runtime with the CUDA 12.8 stack ({app}\runtime) and every
 ; model ({app}\models), so nothing is downloaded on the user's PC. User data (voice profiles, generated audio,
 ; logs) lives in %USERPROFILE%\.voice-clone and is never touched by the uninstaller.
 
@@ -14,7 +14,7 @@
   #define OutputDir "..\build\installer"
 #endif
 #ifndef RuntimeDir
-  #define RuntimeDir "..\build\runtime"
+  #define RuntimeDir "..\build\runtime-cu128"
 #endif
 #ifndef ModelsDir
   #define ModelsDir "..\build\models"
@@ -77,6 +77,7 @@ Source: "{#ModelsDir}\*"; DestDir: "{app}\models"; Flags: recursesubdirs ignorev
 
 [Icons]
 Name: "{group}\{#AppName}"; Filename: "{#PythonW}"; Parameters: "-m vc.launcher"; WorkingDir: "{app}"; Comment: "Generate speech in your own voice"; IconFilename: "{app}\installer\app.ico"
+Name: "{group}\{#AppName} diagnostics"; Filename: "{#PythonExe}"; Parameters: "-m vc.diagnose"; WorkingDir: "{app}"; Comment: "Check the graphics card, driver and models"; IconFilename: "{app}\installer\app.ico"
 Name: "{group}\User guide"; Filename: "{app}\User guide.txt"
 Name: "{group}\Data folder (voices, audio, logs)"; Filename: "{%USERPROFILE}\.voice-clone"
 Name: "{autodesktop}\{#AppName}"; Filename: "{#PythonW}"; Parameters: "-m vc.launcher"; WorkingDir: "{app}"; IconFilename: "{app}\installer\app.ico"; Tasks: desktopicon
@@ -101,7 +102,7 @@ begin
   Result := True;
   if not NvidiaDriverPresent then
     Result := SuppressibleMsgBox('No NVIDIA graphics driver was found.' + #13#10#13#10 +
-      'Voice Clone Studio needs an NVIDIA GPU with 8 GB of memory (RTX 20, 30 or 40 series). ' +
+      'Voice Clone Studio needs an NVIDIA GPU with 8 GB of memory (RTX 20, 30, 40 or 50 series). ' +
       'It will not be able to generate speech on this computer.' + #13#10#13#10 +
       'Continue with the installation anyway?', mbConfirmation, MB_YESNO, idYes) = idYes;
 end;

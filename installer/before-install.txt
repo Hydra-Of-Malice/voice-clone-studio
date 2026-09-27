@@ -4,8 +4,12 @@ BEFORE YOU INSTALL
 
   - Keep the setup .exe and ALL of its .bin files in the same folder.
   - You need Windows 10 or 11 and an NVIDIA graphics card with 8 GB of memory
-    (RTX 20, 30 or 40 series). RTX 50 series cards are not supported yet.
+    (RTX 20, 30, 40 or 50 series).
+  - Your NVIDIA driver must be version 572 or newer. Update it with the
+    NVIDIA app or from nvidia.com/drivers if you are not sure.
   - About 30 GB of free disk space is needed during installation.
+  - The first analysis and the first generation after installing take several
+    minutes, because Windows checks every new file once. This is normal.
 
 RESPONSIBLE USE
 
