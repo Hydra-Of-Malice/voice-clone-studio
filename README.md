@@ -1,16 +1,50 @@
-# Voice Clone Studio
+<div align="center">
 
-Generate speech in **your own voice** from any script, in Hindi, Hinglish or English, entirely on your
-own Windows PC.
+# 🎙️ Voice Clone Studio
 
-Record or upload 5–10 minutes of your voice, read a short consent statement aloud, then type a script
-and get a 48 kHz WAV and an MP3 back. Nothing is uploaded: every model runs locally on your GPU.
+### Type a script. Hear it in your own voice.
 
-> **Use it only with your own voice, or with the clear agreement of the speaker.** The app requires a
-> spoken consent statement, and every file it produces is watermarked and labelled as AI-generated.
+**Hindi · Hinglish · English — 100% on your own PC, nothing uploaded.**
+
+[![Download](https://img.shields.io/github/v/release/Hydra-Of-Malice/voice-dubber?label=Download&style=for-the-badge&color=4f46e5)](https://github.com/Hydra-Of-Malice/voice-dubber/releases/latest)
+![Windows](https://img.shields.io/badge/Windows-10%20%7C%2011-0078D6?style=for-the-badge&logo=windows&logoColor=white)
+![GPU](https://img.shields.io/badge/NVIDIA-8%20GB%20GPU-76B900?style=for-the-badge&logo=nvidia&logoColor=white)
+![Offline](https://img.shields.io/badge/Runs-Offline-15803d?style=for-the-badge)
+
+<img src="docs/screenshot-studio.png" alt="Voice Clone Studio" width="720">
+
+</div>
+
+Record 5–10 minutes of your voice once. After that, paste any script and get studio-quality audio
+back in seconds: narration for videos, podcasts, reels, lessons or audiobooks, without sitting in front
+of a microphone again.
+
+## ✨ Why you'll like it
+
+| | |
+|---|---|
+| 🗣️ **Sounds like you** | Clones your voice from one short recording, with an optional one-minute fine-tune that is kept only if it really sounds closer to you |
+| 🇮🇳 **Built for Hinglish** | Write `Aaj hum AI ke baare mein baat karenge` or `आज हम AI के बारे में बात करेंगे` — both work, and English words stay English |
+| 🔒 **Private by design** | Everything runs on your GPU. Your recordings never leave your computer |
+| ⚡ **One installer** | No Python, no setup, no model downloads. Install and start |
+| 🎚️ **Ready to publish** | 48 kHz 24-bit WAV and 320 kbps MP3, loudness-normalised, in four speaking styles |
+| 🧹 **Forgiving** | Scores your recording, tells you how to improve it, and cleans background noise automatically |
+| ✅ **Safe** | Spoken consent is required, and every file is watermarked and labelled as AI-generated |
+
+## 🚀 Three steps
+
+<div align="center">
+<img src="docs/screenshot-voices.png" alt="Voices and fine-tuning" width="720">
+</div>
+
+1. **Create your voice** — upload or record 5–10 minutes of yourself speaking.
+2. **Confirm it's you** — read a short statement aloud.
+3. **Type and generate** — paste a script, pick a style, download the audio.
+
+> **Use it only with your own voice, or with the clear agreement of the speaker.**
 > See [Responsible use](#responsible-use).
 
-## Download
+## 📥 Download
 
 Get the installer from the [Releases page](https://github.com/Hydra-Of-Malice/voice-dubber/releases).
 

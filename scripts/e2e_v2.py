@@ -24,7 +24,8 @@ import soundfile as sf
 sys.stdout.reconfigure(encoding="utf-8")
 BASE = "http://127.0.0.1:8765"
 ROOT = Path(__file__).resolve().parent.parent
-DB = os.path.join(os.path.expanduser("~"), ".voice-clone", "voice-clone.db")
+DB = os.path.join(os.environ.get("VC_DATA_DIR") or os.path.join(os.path.expanduser("~"), ".voice-clone"),
+                  "voice-clone.db")
 STATE = ROOT / "testdata" / "e2e_state.json"
 stage = sys.argv[1] if len(sys.argv) > 1 else "all"
 

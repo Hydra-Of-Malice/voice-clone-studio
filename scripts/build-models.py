@@ -48,7 +48,8 @@ def main() -> None:
     print("== Watermark")
     copy_tree(HOME / ".cache" / "audioseal", OUT / "audioseal")
     print("== Tokenizer data")
-    copy_tree(HOME / ".pkuseg", OUT / "pkuseg", shutil.ignore_patterns("temp", "*.zip"))
+    # the .zip must ship too: the library re-downloads the data when the archive is missing
+    copy_tree(HOME / ".pkuseg", OUT / "pkuseg", shutil.ignore_patterns("temp"))
 
     print("== Hinglish ASR (half precision)")
     dst = OUT / "asr" / "whisper-hinglish-preview"

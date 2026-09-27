@@ -14,7 +14,10 @@ export default function App() {
   const [status, setStatus] = useState(null)
   const [profiles, setProfiles] = useState([])
   const [profileId, setProfileId] = useState('')
-  const [tab, setTab] = useState('studio')
+  const [tab, setTab] = useState(() => {
+    const t = new URLSearchParams(window.location.search).get('tab')
+    return ['studio', 'voices', 'verify', 'history'].includes(t) ? t : 'studio'
+  })
 
   const refreshProfiles = useCallback(async () => {
     const rows = await api('/api/profiles')
